@@ -1,14 +1,15 @@
 export default function AppNew() {
+    const publicUrl = process.env.PUBLIC_URL || '';
     const images = [
-        '/src/assets/andrea1.webp',
-        '/src/assets/andrea2.webp',
-      ];
+        publicUrl + '/andrea2.webp',
+        publicUrl + '/andrea2.webp'
+    ];
 
     const columnCount = 1000;
     const rowCount = 1000;
     const cellWidth = 180;
     const cellHeight = 180;
-    
+
     return (
         <div className="scroll-container">
             {Array.from({ length: rowCount }).map((_, rowIndex) => (

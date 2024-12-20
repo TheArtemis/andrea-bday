@@ -1,12 +1,14 @@
 import React, { useRef, useCallback, useMemo, useEffect } from 'react';
 import { VariableSizeGrid as Grid } from 'react-window';
+import andrea2url from './assets/andrea2.webp';
+import musicUrl from './assets/ilredellelamentele.mp3';
 import './App.css'
 function App() {
 
   // Duplicate videos to create seamless loop
   const images = useMemo(() => [
-    '/src/assets/andrea2.webp',
-    '/src/assets/andrea2.webp',
+    andrea2url,
+    andrea2url,
   ], []);
 
   const gridRef = useRef(null);
@@ -20,7 +22,7 @@ function App() {
   const getRowHeight = useCallback(() => cellHeight, []);
 
   useEffect(() => {
-    const music = new Audio('/src/assets/ilredellelamentele.mp3');
+    const music = new Audio(musicUrl);
     const playMusic = () => {
       music.play().catch(error => {
         console.error('Failed to play audio:', error);
